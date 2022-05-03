@@ -4,8 +4,12 @@ import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpInterceptorService } from './services/httpInterceptor/http-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -17,13 +21,21 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+
   ],
   providers: [
     {
       provide: RouteReuseStrategy, 
       useClass: IonicRouteStrategy 
-    }
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true
+    },
+
   ],
 
   bootstrap: [AppComponent],
