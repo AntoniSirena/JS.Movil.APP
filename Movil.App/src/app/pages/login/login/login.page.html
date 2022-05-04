@@ -1,10 +1,11 @@
-
 <ion-content>
 
   <ion-card class="card">
 
     <ion-card-header>
-      <ion-card-title style="text-align: center;"> <span style="color: rgb(57, 152, 235); font-weight: bold;">JS.</span> <span style="color: rgb(240, 54, 54); font-weight: bold;">Soluc.</span> <span style="color: blue; font-weight: bold;">Tech</span> </ion-card-title>
+      <ion-card-title style="text-align: center;"> <span style="color: rgb(57, 152, 235); font-weight: bold;">JS.</span>
+        <span style="color: rgb(240, 54, 54); font-weight: bold;">Soluc.</span> <span
+          style="color: blue; font-weight: bold;">Tech</span> </ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
@@ -15,21 +16,30 @@
           <ion-label position="floating" style="font-weight: bold;">Usuario</ion-label>
           <ion-input type="text" formControlName="userName"></ion-input>
         </ion-item>
-  
+
         <ion-item no-lines color="light" style="margin-top: 7px; margin-bottom: 8px; border-radius: 18px;">
           <ion-label position="floating" style="font-weight: bold;">Contraseña</ion-label>
           <ion-input type="password" formControlName="password"></ion-input>
         </ion-item>
-          
+
         <ion-button type="submit" expand="block" color="primary" [disabled]="loginForm.invalid"
-        style="margin-top: 17px; font-weight: bold;" >Iniciar sesión</ion-button>
+          style="margin-top: 17px; font-weight: bold;">Iniciar sesión</ion-button>
 
       </form>
-      
+
+    </ion-card-content>
+
+  </ion-card>
+
+
+  <br>
+  <ion-card>
+
+    <ion-card-content>
+      <img src="../../assets/public/JS_SolucTech.PNG"/>
     </ion-card-content>
 
   </ion-card>
 
 
 </ion-content>
-

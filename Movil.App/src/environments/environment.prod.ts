@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  coreURL: '',
+  coreURL: 'http://fast-inventario.jssoluctech.com/core/',
 };

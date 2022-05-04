@@ -9,14 +9,19 @@ import { Profile } from './models/profile';
 export class AppComponent {
 
   public appPages = [
-    { title: 'Mi perfil', url: '/profile', icon: 'person' },
+    {
+      title: 'Mi perfil',
+      url: '/profile',
+      icon: 'person',
+    },
+
   ];
 
   profle: Profile;
 
   constructor(
-   
-  ) {}
+
+  ) { }
 
   ngOnInit() {
   }
