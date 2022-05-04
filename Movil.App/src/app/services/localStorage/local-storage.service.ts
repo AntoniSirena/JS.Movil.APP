@@ -6,4 +6,9 @@ import { Injectable } from '@angular/core';
 export class LocalStorageService {
 
   constructor() { }
+
+  addSectionData(data: any) {
+    localStorage.setItem('sectionData', JSON.stringify(data));
+  }
+
 }
