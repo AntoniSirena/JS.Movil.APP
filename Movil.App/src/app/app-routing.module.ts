@@ -25,7 +25,13 @@ const routes: Routes = [
     path: 'close-session',
     canActivate: [AuthGuard],
     loadChildren: () => import('./pages/closeSession/close-session/close-session.module').then( m => m.CloseSessionPageModule)
+  },
+  {
+    path: 'profile',
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./pages/profile/profile/profile.module').then( m => m.ProfilePageModule)
   }
+
 
 
 ];
