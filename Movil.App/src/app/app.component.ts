@@ -10,7 +10,6 @@ export class AppComponent {
 
   public appPages = [
     { title: 'Mi perfil', url: '/profile', icon: 'person' },
-    { title: 'Cerrar sesión', url: '/close-session', icon: 'exit' },
   ];
 
   profle: Profile;

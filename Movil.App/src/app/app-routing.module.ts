@@ -19,6 +19,7 @@ const routes: Routes = [
   },
   {
     path: 'default',
+    canActivate: [AuthGuard],
     loadChildren: () => import('./pages/default/default/default.module').then( m => m.DefaultPageModule)
   },
   {

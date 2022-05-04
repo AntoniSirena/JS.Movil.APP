@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Profile } from 'src/app/models/profile';
 import { ProfileService } from 'src/app/services/profile/profile.service';
 import { environment } from 'src/environments/environment';
@@ -18,10 +19,17 @@ export class ProfilePage implements OnInit {
   
   constructor(
     private profileService: ProfileService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
     this.profile = this.profileService.getUserProfile();
+  }
+
+
+  logOut(){
+    localStorage.clear();
+    this.router.navigate(['login']);
   }
 
 }

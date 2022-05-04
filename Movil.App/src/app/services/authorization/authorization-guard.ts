@@ -1,18 +1,24 @@
 import { Injectable } from '@angular/core'
-import { CanActivate } from '@angular/router';
+import { CanActivate, Router } from '@angular/router';
 
 
 @Injectable({ providedIn: 'root' })
 
 export class AuthGuard implements CanActivate {
 
-    sectionData = JSON.parse(localStorage.getItem("sectionData")) || '';
-
-    constructor() {}
+    constructor(private router : Router) {
+        
+    }
 
     canActivate() {
 
-        if (this.sectionData) {
+        let sectionData = JSON.parse(localStorage.getItem("sectionData")) || '';
+
+        if(this.router.url.match('defaul') && !sectionData){
+            return false;
+        }
+
+        if (sectionData) {
             return true;
         }else{
             return false;
