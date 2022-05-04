@@ -25,7 +25,7 @@ export class LoginPage implements OnInit {
   }
 
   login(form: any) {
-console.log(form);
+
     const data: Ilogin = {
       UserName: form.userName,
       Password: form.password,
