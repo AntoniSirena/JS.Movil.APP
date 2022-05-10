@@ -1,8 +1,9 @@
 {
     "/api/*": {
-    "target": "http://localhost:61090/",
-    "changeOrigin": true,
-    "secure": false,
-    "logLevel": "debug"
+        "path": "/",
+        "target": "http://fast-inventario.jssoluctech.com/core/",
+        "changeOrigin": true,
+        "secure": false,
+        "logLevel": "debug"
     }
-   }
+}
