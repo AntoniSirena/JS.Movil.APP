@@ -12,6 +12,7 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { NetworkConnectionService } from '../networkConnection/network-connection.service';
 
 
 @Injectable({
@@ -22,7 +23,9 @@ export class HttpInterceptorService implements HttpInterceptor{
   token: string;
   coreURL: string;
 
-  constructor() {
+  constructor(
+    private networkConnectionService: NetworkConnectionService,
+  ) {
     this.coreURL = environment.coreURL;
   }
 
@@ -39,6 +42,8 @@ export class HttpInterceptorService implements HttpInterceptor{
     } else {
       headers = headers.append('Authorization', `${this.token}`);
     }
+
+    this.networkConnectionService.getNetworkStatus();
 
     const reqclone = req.clone({
       headers
